@@ -1,10 +1,11 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using ExpenseBucket.Core.Repositories;
 
 namespace ExpenseBucket.Core
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         IAccountRepository Accounts { get; }
         IBackupRepository Backups { get; }
