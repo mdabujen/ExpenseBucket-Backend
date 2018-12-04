@@ -53,6 +53,10 @@
     <Compile Include="Configurations\BackupConfiguration.cs" />
     <Compile Include="Configurations\CategoryConfiguration.cs" />
     <Compile Include="Configurations\ItemConfiguration.cs" />
+    <Compile Include="Migrations\201812040728526_InitialMigration.cs" />
+    <Compile Include="Migrations\201812040728526_InitialMigration.Designer.cs">
+      <DependentUpon>201812040728526_InitialMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\BackupRepository.cs" />
@@ -71,6 +75,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812040728526_InitialMigration.resx">
+      <DependentUpon>201812040728526_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

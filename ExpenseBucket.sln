@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseBucket.Core", "Expen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseBucket.EF", "ExpenseBucket.EF\ExpenseBucket.EF.csproj", "{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseBucket.WebApi", "ExpenseBucket.WebApi\ExpenseBucket.WebApi.csproj", "{35151F72-E024-4A09-8084-03B1302A164D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35151F72-E024-4A09-8084-03B1302A164D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35151F72-E024-4A09-8084-03B1302A164D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35151F72-E024-4A09-8084-03B1302A164D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35151F72-E024-4A09-8084-03B1302A164D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

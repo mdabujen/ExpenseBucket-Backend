@@ -13,6 +13,8 @@ namespace ExpenseBucket.EF.Configurations
             Property(x => x.Title)
                 .IsRequired();
 
+            Property(x => x.ImageId)
+                .IsRequired();
         }
     }
 }

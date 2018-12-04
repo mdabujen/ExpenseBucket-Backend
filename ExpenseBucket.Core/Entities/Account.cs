@@ -1,4 +1,6 @@
-﻿namespace ExpenseBucket.Core.Entities
+﻿using System.Collections.Generic;
+
+namespace ExpenseBucket.Core.Entities
 {
     public class Account
     {
@@ -7,5 +9,6 @@
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public IEnumerable<Backup> Backups { get; set; }
     }
 }
