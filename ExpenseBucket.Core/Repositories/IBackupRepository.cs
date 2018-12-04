@@ -8,20 +8,38 @@ namespace ExpenseBucket.Core.Repositories
 {
     public interface IBackupRepository : IRepository<Backup>
     {
-        List<Backup> GetByDate(int count, int offset, DateTime date);
-        Task<List<Backup>> GetByDateAsync(int count, int offset, DateTime date);
+        #region GetByDate
+        List<Backup> GetByDate(DateTime date, Account account);
+        Task<List<Backup>> GetByDateAsync(DateTime date, Account account);
+        Task<List<Backup>> GetByDateAsync(DateTime date, Account account, CancellationToken cancellationToken);
 
-        Task<List<Backup>> GetByDateAsync(int count, int offset, DateTime date, CancellationToken cancellationToken);
+        List<Backup> GetByDate(int count, int offset, DateTime date, Account account);
+        Task<List<Backup>> GetByDateAsync(int count, int offset, DateTime date, Account account);
 
-        List<Backup> GetByTitle(int count, int offset, string title);
-        Task<List<Backup>> GetByTitleAsync(int count, int offset, string title);
-        Task<List<Backup>> GetByTitleAsync(int count, int offset, string title, CancellationToken cancellationToken);
+        Task<List<Backup>> GetByDateAsync(int count, int offset, DateTime date, Account account, CancellationToken cancellationToken);
+        #endregion
+
+        #region GetByTitle
+        List<Backup> GetByTitle(string title, Account account);
+        Task<List<Backup>> GetByTitleAsync(string title, Account account);
+        Task<List<Backup>> GetByTitleAsync(string title, Account account, CancellationToken cancellationToken);
+
+        List<Backup> GetByTitle(int count, int offset, string title, Account account);
+        Task<List<Backup>> GetByTitleAsync(int count, int offset, string title, Account account);
+        Task<List<Backup>> GetByTitleAsync(int count, int offset, string title, Account account, CancellationToken cancellationToken);
+        #endregion
+
+        #region GetByAccount
+        List<Backup> GetByAccount(Account account);
+        Task<List<Backup>> GetByAccountAsync(Account account);
+        Task<List<Backup>> GetByAccountAsync(Account account, CancellationToken cancellationToken);
 
         List<Backup> GetByAccount(int count, int offset, Account account);
         Task<List<Backup>> GetByAccountAsync(int count, int offset, Account account);
 
         Task<List<Backup>> GetByAccountAsync(int count, int offset, Account account,
-            CancellationToken cancellationToken);
+            CancellationToken cancellationToken); 
+        #endregion
 
     }
 }

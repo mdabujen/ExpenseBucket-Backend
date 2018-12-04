@@ -17,6 +17,5 @@ namespace ExpenseBucket.Core.Entities
         public decimal StartingBudget { get; set; }
         public Category Category { get; set; }
         public Backup Backup { get; set; }
-
     }
 }

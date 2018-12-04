@@ -8,44 +8,76 @@ namespace ExpenseBucket.Core.Repositories
 {
     public interface IItemRepository : IRepository<Item>
     {
+        #region GetByBackup
+        List<Item> GetByBackup(Backup backup);
+        Task<List<Item>> GetByBackupAsync(Backup backup);
+        Task<List<Item>> GetByBackupAsync(Backup backup, CancellationToken cancellationToken);
+
         List<Item> GetByBackup(int count, int offset, Backup backup);
         Task<List<Item>> GetByBackupAsync(int count, int offset, Backup backup);
         Task<List<Item>> GetByBackupAsync(int count, int offset, Backup backup, CancellationToken cancellationToken);
+        #endregion
 
-        List<Item> GetByType(int count, int offset, string type);
-        Task<List<Item>> GetByTypeAsync(int count, int offset, string type);
-        Task<List<Item>> GetByTypeAsync(int count, int offset, string type, CancellationToken cancellationToken);
+        #region GetByType
+        List<Item> GetByType(string type, Backup backup);
+        Task<List<Item>> GetByTypeAsync(string type, Backup backup);
+        Task<List<Item>> GetByTypeAsync(string type, Backup backup, CancellationToken cancellationToken);
 
-        Item GetByTitle(string title);
-        Task<Item> GetByTitleAsync(string title);
-        Task<Item> GetByTitleAsync(string title, CancellationToken cancellationToken);
+        List<Item> GetByType(int count, int offset, string type, Backup backup);
+        Task<List<Item>> GetByTypeAsync(int count, int offset, string type, Backup backup);
+        Task<List<Item>> GetByTypeAsync(int count, int offset, string type, Backup backup, CancellationToken cancellationToken);
+        #endregion
 
-        List<Item> GetByCategory(int count, int offset, Category category);
-        Task<List<Item>> GetByCategoryAsync(int count, int offset, Category category);
+        #region GetByTitle
+        Item GetByTitle(string title, Backup backup);
+        Task<Item> GetByTitleAsync(string title, Backup backup);
+        Task<Item> GetByTitleAsync(string title, Backup backup, CancellationToken cancellationToken);
+        #endregion
 
-        Task<List<Item>> GetByCategoryAsync(int count, int offset, Category category,
+        #region GetByCategory
+        List<Item> GetByCategory(Category category, Backup backup);
+        Task<List<Item>> GetByCategoryAsync(Category category, Backup backup);
+        Task<List<Item>> GetByCategoryAsync(Category category, Backup backup, CancellationToken cancellationToken);
+
+        List<Item> GetByCategory(int count, int offset, Category category, Backup backup);
+        Task<List<Item>> GetByCategoryAsync(int count, int offset, Category category, Backup backup);
+
+        Task<List<Item>> GetByCategoryAsync(int count, int offset, Category category, Backup backup,
             CancellationToken cancellationToken);
+        #endregion
 
-        List<Item> GetByDateCreated(int count, int offset, DateTime dateCreated);
-        Task<List<Item>> GetByDateCreatedAsync(int count, int offset, DateTime dateCreated);
+        #region GetByDateCreated
+        List<Item> GetByDateCreated(DateTime date, Backup backup);
+        Task<List<Item>> GetByDateCreatedAsync(DateTime date, Backup backup);
+        Task<List<Item>> GetByDateCreatedAsync(DateTime date, Backup backup, CancellationToken cancellationToken);
 
-        Task<List<Item>> GetByDateCreatedAsync(int count, int offset, DateTime dateCreated,
+        List<Item> GetByDateCreated(int count, int offset, DateTime date, Backup backup);
+        Task<List<Item>> GetByDateCreatedAsync(int count, int offset, DateTime date, Backup backup);
+
+        Task<List<Item>> GetByDateCreatedAsync(int count, int offset, DateTime date, Backup backup,
             CancellationToken cancellationToken);
+        #endregion
 
-        List<Item> GetByParentId(int count, int offset, int parentId);
-        Task<List<Item>> GetByParentIdAsync(int count, int offset, int parentId);
-        Task<List<Item>> GetByParentIdAsync(int count, int offset, int parentId, CancellationToken cancellationToken);
+        #region GetByParentId
+        List<Item> GetByParentId(int parentId, Backup backup);
+        Task<List<Item>> GetByParentIdAsync(int parentId, Backup backup);
+        Task<List<Item>> GetByParentIdAsync(int parentId, Backup backup, CancellationToken cancellationToken);
 
-        List<Item> GetByCostRange(int count, int offset, int minCost, int maxCost);
-        Task<List<Item>> GetByCostRangeAsync(int count, int offset, int minCost, int maxCost);
+        List<Item> GetByParentId(int count, int offset, int parentId, Backup backup);
+        Task<List<Item>> GetByParentIdAsync(int count, int offset, int parentId, Backup backup);
+        Task<List<Item>> GetByParentIdAsync(int count, int offset, int parentId, Backup backup, CancellationToken cancellationToken);
+        #endregion
 
-        Task<List<Item>> GetByCostRangeAsync(int count, int offset, int minCost, int maxCost,
-            CancellationToken cancellationToken);
+        #region GetByCostRange
+        List<Item> GetByCostRange(int minCost, int maxCost, Backup backup);
+        Task<List<Item>> GetByCostRangeAsync(int minCost, int maxCost, Backup backup);
+        Task<List<Item>> GetByCostRangeAsync(int minCost, int maxCost, Backup backup, CancellationToken cancellationToken);
 
-        List<Item> GetByHierarchy(int count, int offset, string hierarchy);
-        Task<List<Item>> GetByHierarchyAsync(int count, int offset, string hierarchy);
+        List<Item> GetByCostRange(int count, int offset, int minCost, int maxCost, Backup backup);
+        Task<List<Item>> GetByCostRangeAsync(int count, int offset, int minCost, int maxCost, Backup backup);
 
-        Task<List<Item>> GetByHierarchyAsync(int count, int offset, string hierarchy,
-            CancellationToken cancellationToken);
+        Task<List<Item>> GetByCostRangeAsync(int count, int offset, int minCost, int maxCost, Backup backup,
+            CancellationToken cancellationToken); 
+        #endregion
     }
 }

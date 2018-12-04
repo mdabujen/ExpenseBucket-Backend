@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseBucket.Core", "ExpenseBucket.Core\ExpenseBucket.Core.csproj", "{7291ADF6-7B38-49AC-B096-D6E4DC47E16A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseBucket.EF", "ExpenseBucket.EF\ExpenseBucket.EF.csproj", "{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7291ADF6-7B38-49AC-B096-D6E4DC47E16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7291ADF6-7B38-49AC-B096-D6E4DC47E16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7291ADF6-7B38-49AC-B096-D6E4DC47E16A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1D81FF-907D-4011-B6D6-6201CAB69CEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
