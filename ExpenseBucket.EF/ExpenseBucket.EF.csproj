@@ -49,20 +49,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
-    <Compile Include="Configurations\AccountConfiguration.cs" />
+    <Compile Include="Configurations\UserClaimConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="Configurations\BackupConfiguration.cs" />
     <Compile Include="Configurations\CategoryConfiguration.cs" />
     <Compile Include="Configurations\ItemConfiguration.cs" />
-    <Compile Include="Migrations\201812040728526_InitialMigration.cs" />
-    <Compile Include="Migrations\201812040728526_InitialMigration.Designer.cs">
-      <DependentUpon>201812040728526_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812040739381_AddTestData.cs" />
-    <Compile Include="Migrations\201812040739381_AddTestData.Designer.cs">
-      <DependentUpon>201812040739381_AddTestData.cs</DependentUpon>
+    <Compile Include="Migrations\201812100528555_CreateDatabaseAndAddInitialData.cs" />
+    <Compile Include="Migrations\201812100528555_CreateDatabaseAndAddInitialData.Designer.cs">
+      <DependentUpon>201812100528555_CreateDatabaseAndAddInitialData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\UserClaimRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\BackupRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
@@ -81,11 +79,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812040728526_InitialMigration.resx">
-      <DependentUpon>201812040728526_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812040739381_AddTestData.resx">
-      <DependentUpon>201812040739381_AddTestData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812100528555_CreateDatabaseAndAddInitialData.resx">
+      <DependentUpon>201812100528555_CreateDatabaseAndAddInitialData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

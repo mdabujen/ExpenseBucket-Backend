@@ -15,145 +15,166 @@ namespace ExpenseBucket.EF.Repositories
         {
         }
 
-        public List<Backup> GetByDate(DateTime date, Account account)
+        public List<Backup> GetAllBackup(int id)
         {
             return Set
-                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == account.Id)
+                .Where(x => x.Account.Id == id)
                 .ToList();
         }
 
-        public Task<List<Backup>> GetByDateAsync(DateTime date, Account account)
+        public Task<List<Backup>> GetAllBackupAsync(int id)
         {
             return Set
-                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == account.Id)
+                .Where(x => x.Account.Id == id)
                 .ToListAsync();
         }
 
-        public Task<List<Backup>> GetByDateAsync(DateTime date, Account account, CancellationToken cancellationToken)
+        public Task<List<Backup>> GetAllBackupAsync(int id, CancellationToken cancellationToken)
         {
             return Set
-                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == account.Id)
+                .Where(x => x.Account.Id == id)
                 .ToListAsync(cancellationToken);
         }
 
-        public List<Backup> GetByDate(int count, int offset, DateTime date, Account account)
+        public List<Backup> GetByDate(DateTime date, int id)
         {
             return Set
-                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == account.Id)
-                .Take(count)
-                .Skip(offset)
+                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == id)
                 .ToList();
         }
 
-        public Task<List<Backup>> GetByDateAsync(int count, int offset, DateTime date, Account account)
+        public Task<List<Backup>> GetByDateAsync(DateTime date, int id)
         {
             return Set
-                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == account.Id)
-                .Take(count)
-                .Skip(offset)
+                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == id)
                 .ToListAsync();
         }
 
-        public Task<List<Backup>> GetByDateAsync(int count, int offset, DateTime date, Account account, CancellationToken cancellationToken)
+        public Task<List<Backup>> GetByDateAsync(DateTime date, int id, CancellationToken cancellationToken)
         {
             return Set
-                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == account.Id)
-                .Take(count)
-                .Skip(offset)
+                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == id)
                 .ToListAsync(cancellationToken);
         }
 
-        public List<Backup> GetByTitle(string title, Account account)
+        public List<Backup> GetByDate(int count, int offset, DateTime date, int id)
         {
             return Set
-                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == account.Id)
-                .ToList();
-        }
-
-        public Task<List<Backup>> GetByTitleAsync(string title, Account account)
-        {
-            return Set
-                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == account.Id)
-                .ToListAsync();
-        }
-
-        public Task<List<Backup>> GetByTitleAsync(string title, Account account, CancellationToken cancellationToken)
-        {
-            return Set
-                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == account.Id)
-                .ToListAsync(cancellationToken);
-        }
-
-        public List<Backup> GetByTitle(int count, int offset, string title, Account account)
-        {
-            return Set
-                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == account.Id)
+                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == id)
                 .Take(count)
                 .Skip(offset)
                 .ToList();
         }
 
-        public Task<List<Backup>> GetByTitleAsync(int count, int offset, string title, Account account)
+        public Task<List<Backup>> GetByDateAsync(int count, int offset, DateTime date, int id)
         {
             return Set
-                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == account.Id)
+                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == id)
                 .Take(count)
                 .Skip(offset)
                 .ToListAsync();
         }
 
-        public Task<List<Backup>> GetByTitleAsync(int count, int offset, string title, Account account, CancellationToken cancellationToken)
+        public Task<List<Backup>> GetByDateAsync(int count, int offset, DateTime date, int id, CancellationToken cancellationToken)
         {
             return Set
-                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == account.Id)
+                .Where(x => x.DateCreated.Date == date.Date && x.Account.Id == id)
                 .Take(count)
                 .Skip(offset)
                 .ToListAsync(cancellationToken);
         }
 
-        public List<Backup> GetByAccount(Account account)
+        public List<Backup> GetByTitle(string title, int id)
         {
             return Set
-                .Where(x => x.Account.Id == account.Id)
+                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == id)
                 .ToList();
         }
 
-        public Task<List<Backup>> GetByAccountAsync(Account account)
+        public Task<List<Backup>> GetByTitleAsync(string title, int id)
         {
             return Set
-                .Where(x => x.Account.Id == account.Id)
+                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == id)
                 .ToListAsync();
         }
 
-        public Task<List<Backup>> GetByAccountAsync(Account account, CancellationToken cancellationToken)
+        public Task<List<Backup>> GetByTitleAsync(string title, int id, CancellationToken cancellationToken)
         {
             return Set
-                .Where(x => x.Account.Id == account.Id)
+                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == id)
                 .ToListAsync(cancellationToken);
         }
 
-        public List<Backup> GetByAccount(int count, int offset, Account account)
+        public List<Backup> GetByTitle(int count, int offset, string title, int id)
         {
             return Set
-                .Where(x => x.Account.Id == account.Id)
+                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == id)
                 .Take(count)
                 .Skip(offset)
                 .ToList();
         }
 
-        public Task<List<Backup>> GetByAccountAsync(int count, int offset, Account account)
+        public Task<List<Backup>> GetByTitleAsync(int count, int offset, string title, int id)
         {
             return Set
-                .Where(x => x.Account.Id == account.Id)
+                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == id)
                 .Take(count)
                 .Skip(offset)
                 .ToListAsync();
         }
 
-        public Task<List<Backup>> GetByAccountAsync(int count, int offset, Account account, CancellationToken cancellationToken)
+        public Task<List<Backup>> GetByTitleAsync(int count, int offset, string title, int id, CancellationToken cancellationToken)
         {
             return Set
-                .Where(x => x.Account.Id == account.Id)
+                .Where(x => x.Title.ToLower() == title.ToLower() && x.Account.Id == id)
+                .Take(count)
+                .Skip(offset)
+                .ToListAsync(cancellationToken);
+        }
+
+        public List<Backup> GetByAccount(int id)
+        {
+            return Set
+                .Where(x => x.Account.Id == id)
+                .ToList();
+        }
+
+        public Task<List<Backup>> GetByAccountAsync(int id)
+        {
+            return Set
+                .Where(x => x.Account.Id == id)
+                .ToListAsync();
+        }
+
+        public Task<List<Backup>> GetByAccountAsync(int id, CancellationToken cancellationToken)
+        {
+            return Set
+                .Where(x => x.Account.Id == id)
+                .ToListAsync(cancellationToken);
+        }
+
+        public List<Backup> GetByAccount(int count, int offset, int id)
+        {
+            return Set
+                .Where(x => x.Account.Id == id)
+                .Take(count)
+                .Skip(offset)
+                .ToList();
+        }
+
+        public Task<List<Backup>> GetByAccountAsync(int count, int offset, int id)
+        {
+            return Set
+                .Where(x => x.Account.Id == id)
+                .Take(count)
+                .Skip(offset)
+                .ToListAsync();
+        }
+
+        public Task<List<Backup>> GetByAccountAsync(int count, int offset, int id, CancellationToken cancellationToken)
+        {
+            return Set
+                .Where(x => x.Account.Id == id)
                 .Take(count)
                 .Skip(offset)
                 .ToListAsync(cancellationToken);

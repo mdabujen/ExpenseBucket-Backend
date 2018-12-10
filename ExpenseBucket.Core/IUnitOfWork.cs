@@ -7,10 +7,11 @@ namespace ExpenseBucket.Core
 {
     public interface IUnitOfWork : IDisposable
     {
-        IAccountRepository Accounts { get; }
+        IUserRepository Accounts { get; }
         IBackupRepository Backups { get; }
         ICategoryRepository Categories { get; }
         IItemRepository Items { get; }
+        IUserClaimRepository UserClaims { get; }
 
         int SaveChanges();
         Task<int> SaveChangesAsync();

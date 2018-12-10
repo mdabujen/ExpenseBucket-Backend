@@ -9,13 +9,14 @@ namespace ExpenseBucket.EF
     public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext _context;
-        private IAccountRepository _accounts;
+        private IUserRepository _accounts;
         private IBackupRepository _backups;
         private ICategoryRepository _categories;
         private IItemRepository _items;
+        private IUserClaimRepository _userClaims;
 
-        public IAccountRepository Accounts 
-            => _accounts ?? (_accounts = new AccountRepository(_context));
+        public IUserRepository Accounts 
+            => _accounts ?? (_accounts = new UserRepository(_context));
 
         public IBackupRepository Backups
             => _backups ?? (_backups = new BackupRepository(_context));
@@ -26,9 +27,12 @@ namespace ExpenseBucket.EF
         public IItemRepository Items
             => _items ?? (_items = new ItemRepository(_context));
 
-        public UnitOfWork(AppDbContext context)
+        public IUserClaimRepository UserClaims
+            => _userClaims ?? (_userClaims = new UserClaimRepository(_context));
+
+        public UnitOfWork(string nameOrConnectionString)
         {
-            _context = context;
+            _context = new AppDbContext(nameOrConnectionString);
         }
 
         public void Dispose()

@@ -9,7 +9,7 @@ namespace ExpenseBucket.Core.Entities
         public string Title { get; set; }
         public DateTime DateCreated { get; set; }
 
-        public Account Account { get; set; }
+        public User Account { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public IEnumerable<Item> Items { get; set; }
     }
